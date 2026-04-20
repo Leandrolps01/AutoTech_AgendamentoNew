@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, Image, TouchableOpacity, Alert, ScrollView } from 'react-native';
+import { View, Image, TouchableOpacity, Alert, ScrollView, ImageBackground } from 'react-native';
 import { TextInput, Button, Text, Snackbar } from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
 import { styles } from './styles/RegistroUserStyles';
-import { useRegistroUser } from '././hooks/useRegistroUser';
+import { useRegistroUser } from './hooks/useRegistroUser';
 import * as ImagePicker from 'expo-image-picker';
 
 export default function RegistroUser() {
@@ -75,12 +75,17 @@ export default function RegistroUser() {
   };
 
   return (
-    <LinearGradient
-      colors={['#1e3c72', '#2a5298']}
+    <ImageBackground
+      source={require('../../../assets/images/fundo01.jpg')}
       style={styles.container}
-      start={{ x: 0.2, y: 0 }}
-      end={{ x: 1, y: 1 }}
+      resizeMode="cover"
     >
+      <LinearGradient
+        colors={['rgba(30, 60, 114, 0.7)', 'rgba(42, 82, 152, 0.7)']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.overlay}
+      >
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         keyboardShouldPersistTaps="handled"
@@ -186,5 +191,6 @@ export default function RegistroUser() {
         </View>
       </ScrollView>
     </LinearGradient>
+  </ImageBackground>
   );
 }

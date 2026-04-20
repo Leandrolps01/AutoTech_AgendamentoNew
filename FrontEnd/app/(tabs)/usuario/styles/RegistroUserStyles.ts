@@ -106,4 +106,7 @@ scrollContent: {
   flexGrow: 1,
   justifyContent: 'center',
 },
+overlay: {
+  flex: 1,
+},
 });

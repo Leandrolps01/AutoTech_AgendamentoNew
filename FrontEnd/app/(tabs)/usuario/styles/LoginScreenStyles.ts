@@ -73,4 +73,7 @@ export const styles = StyleSheet.create({
   justifyContent: 'center',
   padding: 25,
 },
+  overlay: {
+    flex: 1,
+  },
 });

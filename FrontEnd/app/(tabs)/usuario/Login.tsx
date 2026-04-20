@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Image, Alert, ScrollView } from 'react-native';
+import { View, Image, Alert, ScrollView, ImageBackground } from 'react-native';
 import { TextInput, Button, Text, Snackbar } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -46,76 +46,82 @@ export default function LoginScreen() {
   };
 
   return (
-    <LinearGradient
-      colors={['#1e3c72', '#2a5298']}
+    <ImageBackground
+      source={require('../../../assets/images/fundo01.jpg')}
       style={styles.container}
-      start={{ x: 0.2, y: 0 }}
-      end={{ x: 1, y: 1 }}
+      resizeMode="cover"
     >
-      <ScrollView
-        contentContainerStyle={styles.scrollContent}
-        keyboardShouldPersistTaps="handled"
+      <LinearGradient
+        colors={['rgba(30, 60, 114, 0.7)', 'rgba(42, 82, 152, 0.7)']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.overlay}
       >
-        <View style={styles.header}>
-          <View style={styles.imageWrapper}>
-            <Image source={require('../../../assets/images/Elysium.png')} style={styles.image} />
+        <ScrollView
+          contentContainerStyle={styles.scrollContent}
+          keyboardShouldPersistTaps="handled"
+        >
+          <View style={styles.header}>
+            <View style={styles.imageWrapper}>
+              <Image source={require('../../../assets/images/Elysium.png')} style={styles.image} />
+            </View>
+            <Text style={styles.brand}>AutoTech</Text>
           </View>
-          <Text style={styles.brand}>AutoTech</Text>
-        </View>
 
-        <Text style={styles.title}>Login</Text>
+          <Text style={styles.title}>Login</Text>
 
-        <TextInput
-          label="E-mail"
-          value={email}
-          onChangeText={setEmail}
-          style={styles.input}
-          autoCapitalize="none"
-          keyboardType="email-address"
-          mode="outlined"
-          left={<TextInput.Icon icon="email" />}
-          outlineColor="#1e3c72"
-          activeOutlineColor="#2a5298"
-        />
+          <TextInput
+            label="E-mail"
+            value={email}
+            onChangeText={setEmail}
+            style={styles.input}
+            autoCapitalize="none"
+            keyboardType="email-address"
+            mode="outlined"
+            left={<TextInput.Icon icon="email" />}
+            outlineColor="#1e3c72"
+            activeOutlineColor="#2a5298"
+          />
 
-        <TextInput
-          label="Senha"
-          value={senha}
-          onChangeText={setSenha}
-          secureTextEntry
-          style={styles.input}
-          mode="outlined"
-          left={<TextInput.Icon icon="lock" />}
-          outlineColor="#1e3c72"
-          activeOutlineColor="#2a5298"
-        />
+          <TextInput
+            label="Senha"
+            value={senha}
+            onChangeText={setSenha}
+            secureTextEntry
+            style={styles.input}
+            mode="outlined"
+            left={<TextInput.Icon icon="lock" />}
+            outlineColor="#1e3c72"
+            activeOutlineColor="#2a5298"
+          />
 
-        <Button
-          mode="contained"
-          onPress={handleLoginPress}
-          style={styles.button}
-          contentStyle={{ paddingVertical: 8 }}
-          loading={loading}
-          disabled={loading}
-        >
-          Entrar
-        </Button>
+          <Button
+            mode="contained"
+            onPress={handleLoginPress}
+            style={styles.button}
+            contentStyle={{ paddingVertical: 8 }}
+            loading={loading}
+            disabled={loading}
+          >
+            Entrar
+          </Button>
 
-        <Text
-          style={styles.link}
-          onPress={() => navigation.navigate('RegistroUser')}
-        >
-          Criar uma conta
-        </Text>
+          <Text
+            style={styles.link}
+            onPress={() => navigation.navigate('RegistroUser')}
+          >
+            Criar uma conta
+          </Text>
 
-        <Snackbar
-          visible={visibleSnackbar}
-          onDismiss={() => setVisibleSnackbar(false)}
-          duration={Snackbar.DURATION_SHORT}
-        >
-          Login bem-sucedido!
-        </Snackbar>
-      </ScrollView>
-    </LinearGradient>
+          <Snackbar
+            visible={visibleSnackbar}
+            onDismiss={() => setVisibleSnackbar(false)}
+            duration={Snackbar.DURATION_SHORT}
+          >
+            Login bem-sucedido!
+          </Snackbar>
+        </ScrollView>
+      </LinearGradient>
+    </ImageBackground>
   );
 }
