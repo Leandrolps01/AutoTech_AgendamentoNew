@@ -7,9 +7,9 @@ const AboutScreen = () => {
 
   return (
     <LinearGradient
-      colors={['#8B4513', '#D2B48C', '#FFF8E1']}  // Degradê do marrom para o bege e branco
-      start={{ x: 0, y: 0 }}        // Começa no canto superior esquerdo
-      end={{ x: 1, y: 1 }}          // Termina no canto inferior direito
+      colors={['#1a1a2e', '#16213e', '#0f3460']}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
       style={styles.container}
     >
       <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -88,9 +88,10 @@ const AboutScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10, // Menos padding para aproximar os componentes
+    justifyContent: 'flex-start',
     alignItems: 'center',
-    minHeight: '100%',
+    paddingHorizontal: 20,
+    paddingTop: 20,
   },
   scrollContainer: {
     flexGrow: 1,
@@ -99,115 +100,125 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     alignItems: 'center',
-    marginBottom: 10, // Menos espaço entre a imagem e o título
+    marginBottom: 15,
   },
   image: {
-    width: 160, // Ajustado para um tamanho menor
-    height: 160,
+    width: 180,
+    height: 180,
     resizeMode: 'contain',
-    borderRadius: 80, // Borda arredondada
+    borderRadius: 90,
+    borderWidth: 2,
+    borderColor: '#FEB47B',
   },
   content: {
     alignItems: 'center',
-    marginBottom: 15, // Menos espaço após o conteúdo
+    marginBottom: 20,
+    width: '100%',
   },
   title: {
-    fontSize: 22, // Tamanho da fonte ajustado
+    fontSize: 28,
     fontWeight: 'bold',
-    color: '#2c3e50',
+    color: 'white',
     textAlign: 'center',
-    marginBottom: 6, // Menos espaço entre título e informações
+    marginBottom: 15,
   },
   infoContainer: {
-    marginBottom: 12, // Reduziu a distância
+    marginBottom: 15,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    padding: 12,
+    borderRadius: 10,
   },
   info: {
-    fontSize: 14, // Tamanho do texto ajustado
-    color: '#444',
-    marginBottom: 3, // Menos espaço entre as linhas
+    fontSize: 14,
+    color: 'white',
+    marginBottom: 6,
   },
   highlight: {
     fontWeight: 'bold',
-    color: '#8B4513',
+    color: '#FEB47B',
   },
   button: {
-    backgroundColor: '#8B4513', // Marrom escuro
-    paddingVertical: 8, // Menos padding para aproximar
-    paddingHorizontal: 16,
+    backgroundColor: '#36173d',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
     borderRadius: 8,
     alignItems: 'center',
-    marginBottom: 10, // Reduziu a distância abaixo do botão
+    marginBottom: 20,
+    borderWidth: 1,
+    borderColor: '#FEB47B',
   },
   buttonText: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 14, // Ajuste no tamanho da fonte
+    fontSize: 14,
   },
   statsContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
     width: '100%',
+    marginBottom: 20,
   },
   statBox: {
-    backgroundColor: '#fff',
-    padding: 10, // Menos padding nas caixas de estatísticas
-    margin: 4, // Diminui o espaço entre as caixas
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    padding: 12,
+    margin: 6,
     borderRadius: 10,
     alignItems: 'center',
-    width: '45%',
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 2, height: 2 },
-    elevation: 2,
+    width: '43%',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.3)',
   },
   statNumber: {
-    fontSize: 18, // Ajuste no tamanho da fonte
+    fontSize: 20,
     fontWeight: 'bold',
-    color: '#8B4513',
+    color: '#FEB47B',
   },
   statText: {
-    fontSize: 12, // Ajuste no tamanho da fonte
+    fontSize: 12,
     textAlign: 'center',
-    color: '#333',
+    color: 'white',
   },
   modalOverlay: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Fundo semitransparente
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
   },
   modalContent: {
-    width: '80%',
+    width: '85%',
     backgroundColor: 'white',
-    padding: 20,
-    borderRadius: 10,
+    padding: 25,
+    borderRadius: 12,
     alignItems: 'center',
-    maxHeight: '80%', // Limita a altura do modal
+    maxHeight: '80%',
     overflow: 'scroll',
   },
   modalTitle: {
-    fontSize: 18, // Ajuste do tamanho do título
+    fontSize: 20,
     fontWeight: 'bold',
-    color: '#2c3e50',
-    marginBottom: 8, // Menos espaço abaixo do título
+    color: '#36173d',
+    marginBottom: 12,
   },
   modalDescription: {
-    fontSize: 14, // Tamanho da fonte ajustado
+    fontSize: 14,
     textAlign: 'center',
     color: '#333',
     marginBottom: 20,
+    lineHeight: 20,
   },
   modalButton: {
-    backgroundColor: '#8B4513', // Marrom escuro
-    paddingVertical: 8, // Menos padding para o botão
-    paddingHorizontal: 16,
+    backgroundColor: '#36173d',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
     borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#FEB47B',
   },
   modalButtonText: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 14,
   },
 });
 

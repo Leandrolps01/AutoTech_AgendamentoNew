@@ -48,18 +48,18 @@ function Tabs() {
             case 'Home':
               iconName = 'home';
               return <MaterialIcons name="home" size={size} color={color} />;
-            case 'Sobre nos':
+            case 'Sobre Nós':
               iconName = 'info';
               return <MaterialIcons name="info" size={size} color={color} />;
-            case 'Nossos serviços':
+            case 'Serviços':
               return <FontAwesome5 name="tools" size={size} color={color} />;
-            case 'Portfolio':
+            case 'Portfólio':
               return <MaterialIcons name="work" size={size} color={color} />;
             case 'Depoimentos':
               return <FontAwesome5 name="comments" size={size} color={color} />;
-            case 'Noticias sobre nossos serviços':
+            case 'Blog':
               return <MaterialIcons name="article" size={size} color={color} />;
-            case 'Contate -me':
+            case 'Contato':
               return <MaterialIcons name="contact-page" size={size} color={color} />;
             default:
               return <MaterialIcons name="home" size={size} color={color} />;
@@ -102,12 +102,12 @@ function Tabs() {
       })}
     >
       <TabNavigator.Screen name="Home" component={HomeScreen} options={{ title: 'Página Inicial' }} />
-      <TabNavigator.Screen name="Sobre nos" component={AboutScreen} options={{ title: 'Sobre Nós' }} />
-      <TabNavigator.Screen name="Nossos serviços" component={ServiceScreen} options={{ title: 'Nossos Serviços' }} />
-      <TabNavigator.Screen name="Portfolio" component={PortfolioScreen} options={{ title: 'Portfólio' }} />
+      <TabNavigator.Screen name="Sobre Nós" component={AboutScreen} options={{ title: 'Sobre Nós' }} />
+      <TabNavigator.Screen name="Serviços" component={ServiceScreen} options={{ title: 'Nossos Serviços' }} />
+      <TabNavigator.Screen name="Portfólio" component={PortfolioScreen} options={{ title: 'Portfólio' }} />
       <TabNavigator.Screen name="Depoimentos" component={TestimonialScreen} options={{ title: 'Depoimentos' }} />
-      <TabNavigator.Screen name="Noticias sobre nossos serviços" component={BlogScreen} options={{ title: 'Notícias' }} />
-      <TabNavigator.Screen name="Contate -me" component={ContactScreen} options={{ title: 'Contato' }} />
+      <TabNavigator.Screen name="Blog" component={BlogScreen} options={{ title: 'Blog' }} />
+      <TabNavigator.Screen name="Contato" component={ContactScreen} options={{ title: 'Contato' }} />
     </TabNavigator.Navigator>
   );
 }

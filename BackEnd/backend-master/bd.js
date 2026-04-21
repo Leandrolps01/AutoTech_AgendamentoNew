@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
 // Configura a conexão com o banco de dados PostgreSQL
-const sequelize = new Sequelize('teste', 'postgres', 'admin', {
+const sequelize = new Sequelize('teste', 'postgres', 'root', {
   host: 'localhost',
   dialect: 'postgres',
   logging: false, // Desativa logs de SQL no console

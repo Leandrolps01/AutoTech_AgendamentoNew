@@ -57,40 +57,40 @@ export default function ServicesScreen() {
   return (
     <>
       <LinearGradient
-        colors={['#8B4513', '#D2B48C', '#FFF8E1']}
+        colors={['#1a1a2e', '#16213e', '#0f3460']}
         style={styles.container}
       >
         <ScrollView contentContainerStyle={styles.serviceContainer}>
           <View style={styles.serviceContainer}>
             <ServiceItem
-              icon="search"
-              title="Tratamentos Faciais Avançados"
-              description="Nossos tratamentos faciais incluem limpeza de pele profunda, peelings químicos, microagulhamento, laser facial, radiofrequência e hidratação facial intensiva."
+              icon="wrench"
+              title="Manutenção Preventiva"
+              description="Inspecção completa do veículo, revisão de fluídos, limpeza de filtros, verificação de correia de distribuição e ajustes preventivos para manter seu carro em perfeitas condições."
             />
             <ServiceItem
-              icon="heart"
-              title="Tratamentos Corporais"
-              description="Oferecemos massagens terapêuticas, lipocavitação, criolipólise, radiofrequência corporal, endermologia e envoltórios corporais para desintoxicação e hidratação."
+              icon="hammer"
+              title="Reparos Mecânicos"
+              description="Reparo de motor, câmbio, suspensão, freios, embreagem e todos os sistemas mecânicos. Utilizamos peças de qualidade e técnicos especializados."
             />
             <ServiceItem
-              icon="cut"
-              title="Tratamentos Capilares"
-              description="Nossos tratamentos capilares incluem mesoterapia, terapia com LED, PRP capilar, detox capilar, hidratação e nutrição profunda dos fios."
+              icon="tint"
+              title="Troca de Óleo e Filtros"
+              description="Troca de óleo do motor, filtro de ar, filtro de combustível e filtro de cabine. Utilizamos óleos de qualidade superior para melhor desempenho."
             />
             <ServiceItem
-              icon="stethoscope"
-              title="Podologia"
-              description="Oferecemos tratamento de calos e calosidades, cuidados com unhas encravadas, tratamento de micoses, reflexologia podal, hidratação e esfoliação dos pés e tratamento para pés diabéticos."
+              icon="sliders-h"
+              title="Alinhamento e Balanceamento"
+              description="Alinhamento de suspensão com equipamento de precisão, balanceamento de pneus e ajuste de camber, caster e toe para maior segurança."
             />
             <ServiceItem
-              icon="leaf"
-              title="Bem-Estar e Terapias Alternativas"
-              description="Nossos serviços incluem aromaterapia, acupuntura estética, terapia com pedras quentes, reflexologia, reiki e meditação guiada."
+              icon="microchip"
+              title="Diagnóstico Eletrônico"
+              description="Varredura completa do sistema OBD, diagnóstico de falhas de sensores, injeção eletrônica e sistemas de controle de motor com equipamento de última geração."
             />
             <ServiceItem
-              icon="cut"
-              title="Tratamentos Corporais de Estética e Remodelação"
-              description="Oferecemos depilação a laser, tratamentos para estrias e cicatrizes, tratamentos para flacidez, bronzeamento artificial, clareamento de áreas específicas do corpo e terapias de esfoliação corporal e hidratação profunda."
+              icon="paint-brush"
+              title="Pintura e Funilaria"
+              description="Reparação de amassados, soldagem, preparação de superfícies e pintura com tinta automotiva de qualidade profissional com garantia de acabamento."
             />
           </View>          
         </ScrollView>
@@ -112,14 +112,14 @@ export default function ServicesScreen() {
           <TouchableOpacity
             style={{
               padding: 12,
-              backgroundColor: '#8B4513',
+              backgroundColor: '#36173d',
               flexDirection: 'row',
               alignItems: 'center',
             }}
             onPress={() => setModalView(null)}
           >
-            <FontAwesome name="arrow-left" size={20} color="white" />
-            <Text style={{ color: 'white', marginLeft: 10, fontSize: 16 }}>Voltar</Text>
+            <FontAwesome name="arrow-left" size={20} color="#FEB47B" />
+            <Text style={{ color: '#FEB47B', marginLeft: 10, fontSize: 16 }}>Voltar</Text>
           </TouchableOpacity>
 
           {/* Conteúdo do Modal */}
@@ -135,12 +135,12 @@ export default function ServicesScreen() {
 export function ServiceItem({ icon, title, description }: ServiceItemProps) {
   return (
     <LinearGradient
-      colors={['#D2B48C', '#8B4513']}
+      colors={['rgba(50, 20, 60, 0.9)', 'rgba(30, 15, 40, 0.95)']}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
       style={styles.serviceItem}
     >
-      <FontAwesome name={icon} size={40} color="white" style={styles.icon} />
+      <FontAwesome name={icon} size={40} color="#FEB47B" style={styles.icon} />
       <Text style={styles.serviceTitle}>{title}</Text>
       <Text style={styles.serviceDescription}>{description}</Text>
     </LinearGradient>
@@ -152,8 +152,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   serviceContainer: {
-    padding: 20,
+    padding: 16,
     paddingBottom: 100,
+    alignItems: 'center',
   },
   fixedButtonContainer: {
     position: 'absolute',
@@ -163,7 +164,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-    backgroundColor: '#8B4513',
+    backgroundColor: '#36173d',
     paddingVertical: 12,
     paddingHorizontal: 40,
     borderRadius: 8,
@@ -172,41 +173,48 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowOffset: { width: 2, height: 2 },
     shadowRadius: 4,
+    borderWidth: 1,
+    borderColor: '#FEB47B',
   },
   buttonText: {
-    color: 'white',
+    color: '#FEB47B',
     fontWeight: 'bold',
     fontSize: 16,
   },
   serviceItem: {
-    padding: 20,
-    marginBottom: 15,
-    borderRadius: 15,
+    padding: 18,
+    marginBottom: 16,
+    borderRadius: 12,
     alignItems: 'center',
-    marginHorizontal: 10,
-    maxWidth: 320,
+    marginHorizontal: 8,
+    width: '90%',
+    maxWidth: 340,
     shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 2, height: 2 },
-    elevation: 5,
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 2, height: 4 },
+    elevation: 6,
+    borderWidth: 1,
+    borderColor: 'rgba(254, 180, 123, 0.3)',
   },
   icon: {
     marginBottom: 15,
-    backgroundColor: '#f0e6d6',
-    padding: 10,
+    backgroundColor: 'rgba(254, 180, 123, 0.2)',
+    padding: 12,
     borderRadius: 50,
+    borderWidth: 2,
+    borderColor: '#FEB47B',
   },
   serviceTitle: {
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: 'bold',
     color: 'white',
     marginBottom: 10,
     textAlign: 'center',
   },
   serviceDescription: {
-    fontSize: 15,
-    color: 'white',
+    fontSize: 13,
+    color: 'rgba(255, 255, 255, 0.9)',
     textAlign: 'center',
-    lineHeight: 22,
+    lineHeight: 20,
   },
 });

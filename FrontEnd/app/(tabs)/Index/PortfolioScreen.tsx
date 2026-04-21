@@ -23,12 +23,12 @@ const Portfolio = () => {
   };
 
   const portfolioItems = [
-    { id: '1', imgSrc: require('../../../assets/images/p1.png'), category: 'web', title: 'Limpeza de Pele', description: 'Tratamento facial com limpeza profunda' },
-    { id: '2', imgSrc: require('../../../assets/images/p2.png'), category: 'web', title: 'Massagem Relaxante', description: 'Massagem terapêutica relaxante' },
-    { id: '3', imgSrc: require('../../../assets/images/p3.png'), category: 'design', title: 'Tratamento Capilar', description: 'Hidratação profunda para cabelos' },
-    { id: '4', imgSrc: require('../../../assets/images/p4.png'), category: 'design', title: 'Cuidados com os Pés', description: 'Tratamento para calos e unhas encravadas' },
-    { id: '5', imgSrc: require('../../../assets/images/p5.png'), category: 'photography', title: 'Terapia com Pedras Quentes', description: 'Terapia alternativa para relaxamento muscular' },
-    { id: '6', imgSrc: require('../../../assets/images/p6.png'), category: 'photography', title: 'Depilação a Laser', description: 'Depilação duradoura e eficaz' },
+    { id: '1', imgSrc: require('../../../assets/images/p1.png'), category: 'web', title: 'Reparo de Motor', description: 'Restauração completa de motor com peças originais' },
+    { id: '2', imgSrc: require('../../../assets/images/p2.png'), category: 'web', title: 'Pintura Completa', description: 'Repintura profissional com tinta automotiva' },
+    { id: '3', imgSrc: require('../../../assets/images/p3.png'), category: 'design', title: 'Funilaria', description: 'Reparação e alinhamento de carroceria' },
+    { id: '4', imgSrc: require('../../../assets/images/p4.png'), category: 'design', title: 'Reparo de Suspensão', description: 'Alinhamento e substituição de peças' },
+    { id: '5', imgSrc: require('../../../assets/images/p5.png'), category: 'photography', title: 'Troca de Óleo', description: 'Manutenção preventiva completa' },
+    { id: '6', imgSrc: require('../../../assets/images/p6.png'), category: 'photography', title: 'Diagnóstico Eletrônico', description: 'Varredura OBD e correção de falhas' },
   ];
 
   const filteredItems = portfolioItems.filter(
@@ -47,7 +47,7 @@ const Portfolio = () => {
 
   return (
     <LinearGradient
-      colors={['#8B4513', '#D2B48C', '#FFF8E1']}
+      colors={['#1a1a2e', '#16213e', '#0f3460']}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
       style={styles.container}
@@ -58,25 +58,25 @@ const Portfolio = () => {
           style={[styles.filterButton, activeFilter === 'all' && styles.activeFilter]}
           onPress={() => handleFilterChange('all')}
         >
-          <Text style={styles.filterText}>Todos</Text>
+          <Text style={[styles.filterText, activeFilter === 'all' && styles.activeFilterText]}>Todos</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.filterButton, activeFilter === 'web' && styles.activeFilter]}
           onPress={() => handleFilterChange('web')}
         >
-          <Text style={styles.filterText}>Mais Vendidos</Text>
+          <Text style={[styles.filterText, activeFilter === 'web' && styles.activeFilterText]}>Reparos</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.filterButton, activeFilter === 'design' && styles.activeFilter]}
           onPress={() => handleFilterChange('design')}
         >
-          <Text style={styles.filterText}>Mais Acessados</Text>
+          <Text style={[styles.filterText, activeFilter === 'design' && styles.activeFilterText]}>Pintura</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.filterButton, activeFilter === 'photography' && styles.activeFilter]}
           onPress={() => handleFilterChange('photography')}
         >
-          <Text style={styles.filterText}>Mais Comentados</Text>
+          <Text style={[styles.filterText, activeFilter === 'photography' && styles.activeFilterText]}>Manutenção</Text>
         </TouchableOpacity>
       </ScrollView>
 
@@ -121,41 +121,51 @@ const Portfolio = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding: 12,
   },
   filters: {
     flexDirection: 'row',
     marginBottom: 16,
-    maxHeight: 40,
+    maxHeight: 45,
+    paddingVertical: 4,
   },
   filterButton: {
-    paddingVertical: 6,
-    paddingHorizontal: 12,
+    paddingVertical: 8,
+    paddingHorizontal: 14,
     marginRight: 8,
-    backgroundColor: '#fff',
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: '#ccc',
-    minWidth: 100,
+    borderColor: '#FEB47B',
+    minWidth: 95,
     alignItems: 'center',
     justifyContent: 'center',
   },
   activeFilter: {
-    backgroundColor: '#3498db',
-    borderColor: '#2980b9',
+    backgroundColor: '#36173d',
+    borderColor: '#FEB47B',
   },
   filterText: {
     fontSize: 12,
-    color: '#333',
+    color: 'white',
     fontWeight: '600',
+  },
+  activeFilterText: {
+    color: '#FEB47B',
   },
   portfolioItem: {
     flex: 1,
-    margin: 5, // reduzido para aproximar
-    backgroundColor: '#D2B48C',
+    margin: 6,
+    backgroundColor: 'rgba(54, 23, 61, 0.7)',
     borderRadius: 10,
     overflow: 'hidden',
-    maxWidth: '31.5%', // controla melhor o tamanho por coluna
+    maxWidth: '31%',
+    borderWidth: 1,
+    borderColor: 'rgba(254, 180, 123, 0.3)',
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 2, height: 2 },
+    elevation: 4,
   },
   columnWrapper: {
     justifyContent: 'space-between',
@@ -168,47 +178,55 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
   },
   content: {
-    padding: 8,
+    padding: 10,
     justifyContent: 'space-between',
     height: 160,
+    backgroundColor: 'rgba(50, 20, 60, 0.8)',
   },
   title: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#FEB47B',
   },
   description: {
-    fontSize: 12,
-    color: '#fff',
+    fontSize: 11,
+    color: 'rgba(255, 255, 255, 0.85)',
+    lineHeight: 16,
   },
   viewButton: {
     marginTop: 8,
-    backgroundColor: '#3498db',
+    backgroundColor: '#36173d',
     paddingVertical: 6,
     borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#FEB47B',
   },
   viewButtonText: {
-    color: '#fff',
+    color: '#FEB47B',
     textAlign: 'center',
-    fontSize: 13,
+    fontSize: 12,
+    fontWeight: '600',
   }, 
   modalOverlay: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.7)',
+    backgroundColor: 'rgba(0, 0, 0, 0.9)',
   },
   modalCloseButton: {
     position: 'absolute',
     top: 30,
     right: 20,
     padding: 10,
-    backgroundColor: '#3498db',
+    backgroundColor: '#36173d',
     borderRadius: 50,
+    borderWidth: 1,
+    borderColor: '#FEB47B',
   },
   modalCloseText: {
-    color: '#fff',
+    color: '#FEB47B',
     fontSize: 16,
+    fontWeight: '600',
   },
   modalImage: {
     width: '90%',

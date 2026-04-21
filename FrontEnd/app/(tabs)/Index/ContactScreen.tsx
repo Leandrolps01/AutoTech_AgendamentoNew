@@ -10,7 +10,7 @@ interface GradientProps {
 
 const BackgroundGradient: React.FC<GradientProps> = ({ children, style }) => (
   <LinearGradient
-    colors={['#8B4513', '#D2B48C', '#FFF8E1']}
+    colors={['#1a0033', '#2d0052', '#3d1570']}
     start={{ x: 0, y: 0 }}
     end={{ x: 1, y: 1 }}
     style={[styles.gradient, style]}
@@ -103,57 +103,66 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 20,
+    color: 'white',
   },
   brand: {
-    color: "#d63384",
+    color: "#FEB47B",
   },
   section: {
     marginBottom: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+    padding: 12,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#4E342E",
+    color: "#FEB47B",
   },
   sectionLabel: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#4E342E",
+    color: "#FEB47B",
   },
   sectionText: {
-    fontSize: 16,
-    color: "#333",
+    fontSize: 14,
+    color: "white",
     marginTop: 5,
   },
   link: {
-    fontSize: 16,
-    color: "#0645AD",
+    fontSize: 14,
+    color: "#87CEEB",
     marginTop: 5,
     textDecorationLine: "underline",
   },
   input: {
     borderWidth: 1,
-    borderColor: "#ccc",
-    backgroundColor: "#fff",
-    padding: 10,
-    borderRadius: 6,
+    borderColor: "#FEB47B",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    padding: 12,
+    borderRadius: 8,
     marginBottom: 10,
-    fontSize: 16,
+    fontSize: 14,
+    color: 'white',
   },
   textArea: {
     height: 100,
     textAlignVertical: "top",
   },
   button: {
-    backgroundColor: "#d63384",
+    backgroundColor: "#36173d",
     padding: 15,
-    borderRadius: 6,
+    borderRadius: 8,
     alignItems: "center",
     marginTop: 10,
-    elevation: 2,
+    elevation: 3,
+    borderWidth: 1,
+    borderColor: '#FEB47B',
   },
   buttonText: {
-    color: "#fff",
+    color: "#FEB47B",
     fontSize: 16,
     fontWeight: "bold",
   },

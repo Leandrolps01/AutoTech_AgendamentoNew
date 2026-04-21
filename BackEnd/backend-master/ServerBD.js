@@ -5,7 +5,7 @@ const multer = require('multer');
 const { Usuario, Agendamento, Servico, VwAgendamentos, sequelize } = require('./bd'); // Ajuste o caminho conforme necessário
 
 const app = express();
-const port = 3000; // Ajuste a porta conforme necessário
+const port = 3001; // Ajuste a porta conforme necessário
 
 app.use(cors()); // Habilita CORS
 app.use(express.json()); // Faz o parsing do JSON no corpo das requisições
@@ -52,8 +52,8 @@ app.post('/usuarios/login', async (req, res) => {
 
     if (usuario.foto) {
       const nomeArquivo = path.basename(usuario.foto);
-      const urlBase = 'http://172.16.3.195:3000'; // ou IP da máquina, tipo 'http://192.168.0.100:3000'
-      fotoUrl = `http://172.16.3.195:3000/uploads/${nomeArquivo}`;
+      const urlBase = 'http://192.168.100.5:3001'; // ou IP da máquina, tipo 'http://192.168.0.100:3000'
+      fotoUrl = `http://192.168.100.5:3001/uploads/${nomeArquivo}`;
     }
 
     res.json({
@@ -267,15 +267,6 @@ app.delete('/usuario/deletar/:id', async (req, res) => {
 // Rota para obter todos os agendamentos
 app.get('/agendamentos', async (req, res) => {
   try {
-    const agendamentos = await Agendamento.findAll();
-    res.json(agendamentos);
-  } catch (error) {
-    res.status(500).json({ error: 'Erro ao buscar agendamentos.' });
-  }
-});
-// Rota para obter todos os agendamentos
-app.get('/agendamentos', async (req, res) => {
-  try {
     const { tipo_usuario, email } = req.query;  // Pegando os parâmetros da query
 
     // Verifica se os parâmetros foram passados
@@ -467,6 +458,6 @@ app.delete('/servico/deletar/:id', async (req, res) => {
     res.status(500).json({ error: 'Erro ao deletar serviço.' });
   }
 });
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Servidor rodando em http://0.0.0.0:${port}`);
 });

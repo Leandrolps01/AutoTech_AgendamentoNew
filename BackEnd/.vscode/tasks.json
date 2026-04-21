@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Iniciar Servidor Backend",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"backend-master/ServerBD.js"
+			],
+			"isBackground": true
+		}
+	]
+}
